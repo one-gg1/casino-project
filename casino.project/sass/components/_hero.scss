@@ -1,0 +1,46 @@
+.hero {
+    padding: 0 20px 20px;
+    
+    &__boost {
+        @include glassmorphism;
+        padding: 30px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-color: rgba($accent-pink, 0.3);
+        box-shadow: 0 10px 40px rgba($accent-pink, 0.2);
+        @include clickable;
+        
+        &::after {
+            content: '';
+            position: absolute; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba($accent-pink, 0.1) 0%, transparent 70%);
+            animation: pulseGlow 4s infinite;
+        }
+
+        &-badge {
+            position: absolute; top: 15px; right: 15px;
+            background: $accent-pink; color: white;
+            padding: 4px 10px; border-radius: 8px;
+            font-size: 10px; font-weight: 800;
+            @include neon-text(#fff);
+        }
+
+        h2 { font-weight: 900; font-size: 24px; margin-bottom: 8px; }
+        p { color: $text-muted; font-size: 14px; margin-bottom: 25px; }
+    }
+}
+
+.btn-boost {
+    background: linear-gradient(135deg, $accent-pink, #b0003a);
+    color: white; padding: 14px 28px;
+    border-radius: 12px; font-weight: 800;
+    box-shadow: $glow-pink;
+    @include clickable;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
