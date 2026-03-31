@@ -1,0 +1,36 @@
+.wallet-card {
+    background: linear-gradient(135deg, #2c2c2e, #1c1c1d);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 20px 0;
+    border: 1px solid $tg-hint;
+
+    &__value {
+        font-size: 32px;
+        font-weight: 900;
+        color: $accent-gold;
+        margin-top: 10px;
+    }
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: $transition;
+    
+    &--deposit { background: $accent-green; color: white; }
+    &--withdraw { background: $tg-secondary-bg; color: white; }
+    &--main { background: $tg-link; color: white; width: 100%; margin-top: 15px; }
+    
+    &:active { transform: scale(0.95); opacity: 0.8; }
+}
